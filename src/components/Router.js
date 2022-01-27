@@ -2,7 +2,7 @@ import React from 'react';
 import {HashRouter as Router, Route, Switch} from "react-router-dom"
 import Login from '../routes/Login';
 import Home from '../routes/Home';
-import Signup from '../routes/Signup';
+
 
 
 const AppRouter = ({isLoggedIn}) => {
@@ -10,15 +10,18 @@ const AppRouter = ({isLoggedIn}) => {
     <Router>
         <Switch>
             {isLoggedIn ? (
-                <>
-            <Route exact path ='/'>
-                <Home />
-            </Route>
-            </> ): (
-                <>
-                <Route exact path ='/signup'>
-                    <Signup />    
+            <div
+                style={{
+                    display:'flex',
+                    justifyContent: 'center',
+                    marginTop: "20px"
+                    
+                }}>
+                <Route exact path ='/'>
+                    <Home />
                 </Route>
+                </div> ): (
+                <>
                 <Route exact path ='/'>
                     <Login />    
                 </Route>

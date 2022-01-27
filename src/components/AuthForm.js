@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import {authService} from "fBase"
 import { Link } from 'react-router-dom';
 
-const AuthForm = ({formLogin}) => {
+const AuthForm = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [isLogging, setIsLogging] = useState(formLogin)
+    const [newAccount, setNewAccount] = useState(true)
     const [error, setError] = useState("")
 
     const onChange = (event) => {
@@ -21,7 +21,7 @@ const AuthForm = ({formLogin}) => {
         event.preventDefault();
         try {
             let data;
-            if (isLogging) {
+            if (newAccount) {
                 data  = await authService.signInWithEmailAndPassword(
                     email, password
                 )
@@ -36,6 +36,8 @@ const AuthForm = ({formLogin}) => {
         }
 
     }
+
+    const toggleAccount = () => setNewAccount((prev) => !prev)
 
     return (
         <>
@@ -61,14 +63,14 @@ const AuthForm = ({formLogin}) => {
                     />
                 <input 
                     type ="submit" 
-                    value= {isLogging ? "Log In" : "Create Account"}
+                    value= {newAccount ? "Log In" : "Create Account"}
                     className="authButton"
                 />
-                { formLogin &&
-                    <Link to = "/signup" className="link">            
-                        <input className="signupButton" value ="Signup"/> 
-                    </Link>
-                }
+                
+                <span className="signupButton" onClick={toggleAccount}>
+                    {newAccount ? "Signup" : "Login"}
+                </span>
+                
             </form>
         </>
     )
