@@ -13,12 +13,49 @@ body {
     box-sizing: border-box;
   }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .container {
     width: 100%;
     max-width: 320px;
     display: flex;
     flex-direction: column;
 }
+
+.formInput {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.formBtn {
+    cursor: pointer;
+    padding: 7px 20px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    background-color: #04aaff;
+    cursor: pointer;
+  }
+
+.formCancelBtn {
+  cursor: pointer;
+  background-color: tomato;
+}
+
+.nweetEdit .formBtn {
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
 
 .authContainer {
     display: flex;
@@ -87,4 +124,28 @@ body {
 .factoryArrow {
     position: absolute;
     right : 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: #04aaff;
+}
+
+.nweet{
+    margin-bottom: 20px;
+    background-color: white;
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.nweet_actions{
+    position: absolute;
+    right: 10px;
+    top:10px;
 }
