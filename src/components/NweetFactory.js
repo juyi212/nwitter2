@@ -3,7 +3,7 @@ import React, {useState, useRef} from 'react';
 import { storageService } from "fBase";
 import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const NweetFactory = ({userObj}) => {
     const [nweet, setNweet] = useState("")
@@ -50,6 +50,12 @@ const NweetFactory = ({userObj}) => {
             setAttachment(result)
         }
         reader.readAsDataURL(theFile)
+        console.log(fileInput)
+    }
+
+    const onClearAttachment =  () => {
+        setAttachment("")
+        fileInput.current.value = "";
     }
 
 
@@ -65,16 +71,24 @@ const NweetFactory = ({userObj}) => {
                     />
                 <input className="factoryArrow" type ="submit" value="&rarr;" />
             </div>
-            <label for="attach-file">
+            <label for="attach-file" className="factoryInput_label">
                 <span>Add photos</span>
                 <FontAwesomeIcon icon={faPlus} />
             </label>
             <input id ="attach-file" type="file" accept= "image/*" ref={fileInput} style={{ opacity: 0 }} onChange ={onFileChange} />
             { attachment && (
-                <div>
-                    <img src={attachment} />
-                    <div>
-                        <span> Remove </span>
+                <div className="factoryForm__attachment">
+                    <div 
+                        style={{ 
+                            display: "flex", justifyContent: "center",
+                            marginBottom: "10px"}}>
+                        <img src={attachment} />
+                    </div>
+                    <h4>{fileInput.current.value}</h4>
+                    <div 
+                        className="factoryForm__clear" onClick={onClearAttachment}>
+                            <span> Remove </span>
+                            <FontAwesomeIcon icon={faTimes} />
                     </div>
                 </div>
             )}

@@ -33,6 +33,7 @@ a {
     text-align: center;
     background-color: white;
     color: black;
+    ;
 }
 
 .formBtn {
@@ -48,6 +49,7 @@ a {
 .formCancelBtn {
   cursor: pointer;
   background-color: tomato;
+  border-style: none;
 }
 
 .nweetEdit .formBtn {
@@ -131,8 +133,40 @@ a {
     background-color: #04aaff;
 }
 
+.factoryInput_label {
+    color: #04aaff;
+}
+
+.factoryInput_label span{
+    margin-right: 10px;
+}
+
+.factoryForm__attachment {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.factoryForm__attachment img {
+    height: 80px;
+    width: 80px;
+    border-radius: 80%;
+}
+
+.factoryForm__clear {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: #04aaff;
+}
+
+.factoryForm__clear span{
+    margin-right: 10px;
+}
+
 .nweet{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     background-color: white;
     width: 100%;
     max-width: 320px;
@@ -144,8 +178,29 @@ a {
     color: rgba(0, 0, 0, 0.8);
 }
 
+.nweet img {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 5px;
+    top: 30px;
+    border-radius: 80%;
+}
+
 .nweet_actions{
     position: absolute;
     right: 10px;
     top:10px;
+}
+
+.profileForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: solid 1px ;
+}
+
+.logout {
+    margin-top: 40px;
 }
