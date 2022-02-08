@@ -16,7 +16,7 @@ const AppRouter = ({refreshUser, isLoggedIn, userObj}) => {
                 style={{
                     display:'flex',
                     justifyContent: 'center',
-                    marginTop: 80,
+                    marginTop: 50,
                     
                 }}>
                 <Route exact path ='/'>

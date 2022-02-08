@@ -18,6 +18,11 @@ a {
     color: inherit;
 }
 
+.link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
 
 .container {
     width: 100%;
@@ -58,6 +63,7 @@ a {
     margin-bottom: 5px;
   }
 
+/* AuthForm */
 
 .authContainer {
     display: flex;
@@ -85,11 +91,7 @@ a {
     text-align: center;
     font-weight: bold;
 }
-.link {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-}
+
 .signupButton {
     margin-top: 10px;
     padding: 10px;
@@ -97,6 +99,8 @@ a {
     text-align: center;
     font-weight: bold;
 }
+
+/* NweetFactory */
 
 .factoryForm {
     display: flex;
@@ -165,6 +169,7 @@ a {
     margin-right: 10px;
 }
 
+/* Nweets */
 .nweet{
     margin-bottom: 30px;
     background-color: white;
@@ -193,14 +198,23 @@ a {
     top:10px;
 }
 
+/* Profile */
+
+.profileNav {
+    display: flex;
+    justify-content: center;
+}
+
+
 .profileForm {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding-bottom: 30px;
+    margin-top: 20px;
     border-bottom: solid 1px ;
 }
 
 .logout {
-    margin-top: 40px;
+    margin: 40px 0;
 }
